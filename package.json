@@ -1,14 +1,14 @@
 {
     "name": "mongoose-diff-history",
-    "version": "2.1.0",
-    "description": "Manage Mongo Collection diff History and versions",
+    "version": "2.1.1",
+    "description": "Manage Mongo Collection diff History and versions. Forked from mongoose-diff-history",
     "main": "diffHistoryModel.js",
     "directories": {
         "test": "tests"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/mimani/mongoose-diff-history"
+        "url": "https://github.com/georgejdli/mongoose-diff-history"
     },
     "husky": {
         "hooks": {
@@ -19,7 +19,7 @@
     "dependencies": {
         "deep-empty-object": "^1.0.5",
         "jsondiffpatch": "^0.1.38",
-        "lodash.pick": "^4.4.0",
+        "lodash": "^4.17.15",
         "omit-deep": "git://github.com/izigibran/omit-deep.git#0.4.0",
         "power-assign": "^0.2.10"
     },
@@ -65,7 +65,7 @@
         "versioning"
     ],
     "bugs": {
-        "url": "https://github.com/mimani/mongoose-diff-history/issues"
+        "url": "https://github.com/georgejdli/mongoose-diff-history/issues"
     },
     "license": "GPL-2.0"
 }
