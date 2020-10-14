@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/mimani/mongoose-diff-history.svg?branch=master)](https://travis-ci.org/mimani/mongoose-diff-history)
-[![Downloads](https://img.shields.io/npm/dt/mongoose-diff-history.svg)](https://www.npmjs.com/package/mongoose-diff-history)
-[![Codacy](https://api.codacy.com/project/badge/grade/bf1936538af048ac8d104a6c2ecd71ca)](https://www.codacy.com/app/mimani-saurabh/mongoose-diff-history)
-[![Code Climate](https://codeclimate.com/github/mimani/mongoose-diff-history/badges/gpa.svg)](https://codeclimate.com/github/mimani/mongoose-diff-history)
-[![Test Coverage](https://codeclimate.com/github/mimani/mongoose-diff-history/badges/coverage.svg)](https://codeclimate.com/github/mimani/mongoose-diff-history/coverage)
+# Forked from https://github.com/mimani/mongoose-diff-history
+
+-   to fix some bugs
+    -   add index to use with Azure CosmosDB Mongo API
+    -   use full lodash lib instead of lodash.pick (possible bug)
 
 # mongoose-diff-history
 
@@ -15,7 +15,7 @@ Stores and Manages all the differences and versions, any Mongo collection goes t
 ### npm
 
 ```sh
-npm install mongoose-diff-history
+npm install @georgejdli/mongoose-diff-history
 ```
 
 ## Operation
@@ -70,11 +70,22 @@ const schema = new mongoose.Schema({
 schema.plugin(diffHistory.plugin, { omit: ['ignoredField', 'some.deepField'] });
 ```
 
+Pass in the optional **user and **reason properties to the update options object to record in the history:
+
+```js
+await Response.updateOne(
+    { _id: objectId },
+    { $set: updateSet },
+    { __user: 'John', __reason: 'this is an update' }
+);
+```
+
 ## Helper Methods
 
 ---
 
-You can get all the histories created for an object using following method:
+You can get all the histories created for an object using following method.
+Does not return version number. Provides basic diffing on top level values (strings or number, not objects or arrays)
 
 ```js
 const diffHistory = require('mongoose-diff-history/diffHistory');
@@ -153,7 +164,7 @@ diffHistory
 
 ---
 
-I have created an [example](https://github.com/mimani/mongoose-diff-history/tree/master/example) express service (documentation [here](https://github.com/mimani/mongoose-diff-history/blob/master/example/README.md)), demonstrating this plugin via an simple employee schema, checkout `example` directory in this repo.
+I have created an [example](https://github.com/georgejdli/mongoose-diff-history/tree/master/example) express service (documentation [here](https://github.com/georgejdli/mongoose-diff-history/blob/master/example/README.md)), demonstrating this plugin via an simple employee schema, checkout `example` directory in this repo.
 
 ## Contributing
 
