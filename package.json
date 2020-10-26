@@ -37,7 +37,8 @@
     },
     "scripts": {
         "test": "istanbul cover --report lcov  _mocha tests --recursive",
-        "release": "standard-version"
+        "release": "standard-version",
+        "publish": "git push --follow-tags origin master && npm publish"
     },
     "contributors": [
         {
