@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/bc443e/mongoose-diff-history/compare/v2.1.0...v1.1.0) (2020-10-26)
+
+### Features
+
+-   first commit after forking ([e7433f9](https://github.com/bc443e/mongoose-diff-history/commit/e7433f98f29090d759e4810044c6d3226fa2a312))
+
+### Bug Fixes
+
+-   indexing for CosmosDB, lodash.pick bug ([c6c817b](https://github.com/bc443e/mongoose-diff-history/commit/c6c817bda777f95e807e6ce4943fe4352b58a8e5))
+-   scoping and versioning on package files ([442fd4c](https://github.com/bc443e/mongoose-diff-history/commit/442fd4ca52e14af49226ec1dc848475eaa6aebc9))
+
 ### [2.1.1](https://github.com/georgejdli/mongoose-diff-history/compare/v2.1.0...v2.1.1) (2020-10-14)
 
 ## [2.1.0](https://github.com/mimani/mongoose-diff-history/compare/v2.0.0...v2.1.0) (2020-05-04)
