@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.3](https://github.com/bc443e/mongoose-diff-history/compare/v2.2.2...v2.2.3) (2020-10-26)
+
+### Bug Fixes
+
+-   add repo to package.json ([3d94c94](https://github.com/bc443e/mongoose-diff-history/commit/3d94c94e03e063b5864da70517f62cfb3ac73138))
+
 ### [2.2.2](https://github.com/bc443e/mongoose-diff-history/compare/v2.2.1...v2.2.2) (2020-10-26)
 
 ### [2.2.1](https://github.com/bc443e/mongoose-diff-history/compare/v2.2.0...v2.2.1) (2020-10-26)
