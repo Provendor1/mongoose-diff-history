@@ -12,10 +12,10 @@ Stores and Manages all the differences and versions, any Mongo collection goes t
 
 ---
 
-### npm
+### yarn
 
 ```sh
-npm install @georgejdli/mongoose-diff-history
+yarn add @bc443e/mongoose-diff-history
 ```
 
 ## Operation
@@ -164,7 +164,7 @@ diffHistory
 
 ---
 
-I have created an [example](https://github.com/georgejdli/mongoose-diff-history/tree/master/example) express service (documentation [here](https://github.com/georgejdli/mongoose-diff-history/blob/master/example/README.md)), demonstrating this plugin via an simple employee schema, checkout `example` directory in this repo.
+There is an [example](https://github.com/bc443e/mongoose-diff-history/tree/master/example) express service (documentation [here](https://github.com/bc443e/mongoose-diff-history/blob/master/example/README.md)), demonstrating this plugin via an simple employee schema, checkout `example` directory in this repo.
 
 ## Contributing
 
