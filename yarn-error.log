@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /Users/bc443e/.yarn/bin/yarn.js publish
+  /usr/local/bin/node /Users/bc443e/.yarn/bin/yarn.js run --silent husky-run pre-commit
 
 PATH: 
-  /Users/bc443e/.yarn/bin:/Users/bc443e/.config/yarn/global/node_modules/.bin:/usr/local/share/android-sdk/emulator:/usr/local/share/android-sdk/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/bc443e/.yarn/bin:/Users/bc443e/.config/yarn/global/node_modules/.bin:/usr/local/share/android-sdk/emulator:/usr/local/share/android-sdk/tools:/usr/local/mysql/bin:/usr/local/mysql/bin
+  /Applications/Xcode.app/Contents/Developer/usr/libexec/git-core:/Users/bc443e/.yarn/bin:/Users/bc443e/.config/yarn/global/node_modules/.bin:/usr/local/share/android-sdk/emulator:/usr/local/share/android-sdk/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/bc443e/.yarn/bin:/Users/bc443e/.config/yarn/global/node_modules/.bin:/usr/local/share/android-sdk/emulator:/usr/local/share/android-sdk/tools:/usr/local/mysql/bin:/usr/local/mysql/bin
 
 Yarn version: 
   1.22.5
@@ -14,86 +14,77 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: canceled
-      at Interface.<anonymous> (/Users/bc443e/.yarn/lib/cli.js:137009:13)
-      at Interface.emit (events.js:210:5)
-      at Interface._ttyWrite (readline.js:887:16)
-      at ReadStream.onkeypress (readline.js:191:10)
-      at ReadStream.emit (events.js:210:5)
-      at emitKeys (internal/readline/utils.js:433:14)
-      at emitKeys.next (<anonymous>)
-      at ReadStream.onData (readline.js:1153:36)
-      at ReadStream.emit (events.js:210:5)
-      at addChunk (_stream_readable.js:308:12)
+  SyntaxError: /Users/bc443e/Code/mongoose-diff-history/package.json: Unexpected token } in JSON at position 1657
+      at JSON.parse (<anonymous>)
+      at /Users/bc443e/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/bc443e/.yarn/lib/cli.js:310:30)
+      at /Users/bc443e/.yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
-      "name": "@bc443e/mongoose-diff-history",
-      "version": "2.2.1",
-      "description": "Manage Mongo Collection diff History and versions. Forked from mongoose-diff-history",
-      "main": "index.js",
-      "directories": {
-          "test": "tests"
-      },
-      "repository": {
-          "type": "git",
-          "url": "https://github.com/bc443e/mongoose-diff-history"
-      },
-      "husky": {
-          "hooks": {
-              "pre-commit": "pretty-quick --staged",
-              "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-          }
-      },
-      "dependencies": {
-          "deep-empty-object": "^1.0.5",
-          "jsondiffpatch": "^0.1.38",
-          "lodash": "^4.17.15",
-          "omit-deep": "git://github.com/izigibran/omit-deep.git#0.4.0",
-          "power-assign": "^0.2.10"
-      },
-      "devDependencies": {
-          "bluebird": "^3.5.1",
-          "chai": "^3.5.0",
-          "commitlint": "^8.3.5",
-          "husky": "^4.2.5",
-          "istanbul": "^0.4.5",
-          "mocha": "^2.5.3",
-          "mongoose": "^4.13.9",
-          "prettier": "^2.0.5",
-          "pretty-quick": "^2.0.1",
-          "standard-version": "^7.1.0"
-      },
-      "scripts": {
-          "test": "istanbul cover --report lcov  _mocha tests --recursive",
-          "release": "standard-version",
-          "publish": "git push --follow-tags origin master && npm publish"
-      },
-      "contributors": [
-          {
-              "name": "Brandon Canaday",
-              "email": "bc443e@att.com"
-          },
-          {
-              "name": "George Li",
-              "email": "georgejdli@gmail.com"
-          }
-      ],
-      "engines": {
-          "node": "*"
-      },
-      "keywords": [
-          "mongoose",
-          "audit",
-          "oplog",
-          "diff",
-          "history",
-          "versioning"
-      ],
-      "bugs": {
-          "url": "https://github.com/bc443e/mongoose-diff-history/issues"
-      },
-      "license": "GPL-2.0"
+    "name": "@bc443e/mongoose-diff-history",
+    "version": "2.2.2",
+    "description": "Manage Mongo Collection diff History and versions. Forked from mongoose-diff-history",
+    "main": "index.js",
+    "directories": {
+      "example": "example",
+      "test": "tests"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/bc443e/mongoose-diff-history.git"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "pretty-quick --staged",
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
+    },
+    "dependencies": {
+      "deep-empty-object": "^1.0.5",
+      "jsondiffpatch": "^0.1.38",
+      "lodash": "^4.17.15",
+      "omit-deep": "git://github.com/izigibran/omit-deep.git#0.4.0",
+      "power-assign": "^0.2.10"
+    },
+    "devDependencies": {
+      "bluebird": "^3.5.1",
+      "chai": "^3.5.0",
+      "commitlint": "^8.3.5",
+      "husky": "^4.2.5",
+      "istanbul": "^0.4.5",
+      "mocha": "^2.5.3",
+      "mongoose": "^4.13.9",
+      "prettier": "^2.0.5",
+      "pretty-quick": "^2.0.1",
+      "standard-version": "^7.1.0"
+    },
+    "scripts": {
+      "test": "istanbul cover --report lcov  _mocha tests --recursive",
+      "release": "standard-version",
+      "publish": "git push --follow-tags origin master && npm publish --access public"
+    },
+    "contributors": [
+      "Brandon Canaday <bc443e@att.com>",
+      "George Li <georgejdli@gmail.com>"
+    ],
+    "engines": {
+      "node": "*"
+    },
+    "keywords": [
+      "mongoose",
+      "audit",
+      "oplog",
+      "diff",
+      "history",
+      "versioning"
+    ],
+    "bugs": {
+      "url": "https://github.com/bc443e/mongoose-diff-history/issues"
+    },
+    "license": "GPL-2.0",
+    "homepage": "https://github.com/bc443e/mongoose-diff-history#readme",
   }
 
 yarn manifest: 

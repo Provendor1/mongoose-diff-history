@@ -4,11 +4,12 @@
     "description": "Manage Mongo Collection diff History and versions. Forked from mongoose-diff-history",
     "main": "index.js",
     "directories": {
+        "example": "example",
         "test": "tests"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/bc443e/mongoose-diff-history"
+        "url": "git+https://github.com/bc443e/mongoose-diff-history.git"
     },
     "husky": {
         "hooks": {
@@ -41,14 +42,8 @@
         "publish": "git push --follow-tags origin master && npm publish --access public"
     },
     "contributors": [
-        {
-            "name": "Brandon Canaday",
-            "email": "bc443e@att.com"
-        },
-        {
-            "name": "George Li",
-            "email": "georgejdli@gmail.com"
-        }
+        "Brandon Canaday <bc443e@att.com>",
+        "George Li <georgejdli@gmail.com>"
     ],
     "engines": {
         "node": "*"
@@ -64,5 +59,6 @@
     "bugs": {
         "url": "https://github.com/bc443e/mongoose-diff-history/issues"
     },
-    "license": "GPL-2.0"
+    "license": "GPL-2.0",
+    "homepage": "https://github.com/bc443e/mongoose-diff-history#readme"
 }
