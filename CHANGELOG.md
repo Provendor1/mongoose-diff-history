@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/bc443e/mongoose-diff-history/compare/v2.2.3...v2.3.0) (2020-11-16)
+
+### Features
+
+-   remove pre-hook for model.remove() so soft deletes work ([7599047](https://github.com/bc443e/mongoose-diff-history/commit/759904761ab50cf4a96f4c9b3c38679e964629ff))
+
 ### [2.2.3](https://github.com/bc443e/mongoose-diff-history/compare/v2.2.2...v2.2.3) (2020-10-26)
 
 ### Bug Fixes
