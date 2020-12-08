@@ -1,6 +1,6 @@
 {
     "name": "@bc443e/mongoose-diff-history",
-    "version": "2.4.0",
+    "version": "2.4.1",
     "description": "Manage Mongo Collection diff History and versions. Forked from mongoose-diff-history",
     "main": "index.js",
     "directories": {

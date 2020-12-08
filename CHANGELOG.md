@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.1](https://github.com/bc443e/mongoose-diff-history/compare/v2.4.0...v2.4.1) (2020-12-08)
+
+### Bug Fixes
+
+-   rename npm script to avoid double-publishing ([6c7fbf6](https://github.com/bc443e/mongoose-diff-history/commit/6c7fbf6d4097bba78b539591b0775d536aec65dc))
+
 ## [2.4.0](https://github.com/bc443e/mongoose-diff-history/compare/v2.3.1...v2.4.0) (2020-12-08)
 
 ### Features
