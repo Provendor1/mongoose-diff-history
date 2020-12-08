@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.3](https://github.com/bc443e/mongoose-diff-history/compare/v2.4.2...v2.4.3) (2020-12-08)
+
+### Bug Fixes
+
+-   resolve bug that caused library not to run properly... again ([573302e](https://github.com/bc443e/mongoose-diff-history/commit/573302ef1a4b857d13d89c748fcf13d2f5be1663))
+
 ### [2.4.2](https://github.com/bc443e/mongoose-diff-history/compare/v2.4.1...v2.4.2) (2020-12-08)
 
 ### Bug Fixes
