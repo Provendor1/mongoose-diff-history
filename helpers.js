@@ -1,5 +1,5 @@
 function positiveInt(value) {
-    const parsedInt = parsedInt(value, 10);
+    const parsedInt = parseInt(value, 10);
 
     if (isNaN(parsedInt) || parsedInt <= 0) {
         return false;

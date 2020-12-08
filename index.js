@@ -270,14 +270,14 @@ const plugin = function lastModifiedPlugin(schema, opts = {}) {
     }
 
     if (opts.advancedTextDiffMinLength) {
-        const positiveInt = positiveInt(opts.advancedTextDiffMinLength);
+        const positiveInteger = positiveInt(opts.advancedTextDiffMinLength);
 
-        if (!positiveInt) {
+        if (!positiveInteger) {
             const errMsg = `opts.advancedTextDiffMinLength expects a positive integer`;
             throw new TypeError(errMsg);
         }
 
-        opts.advancedTextDiffMinLength = positiveInt;
+        opts.advancedTextDiffMinLength = positiveInteger;
     } else {
         opts.advancedTextDiffMinLength = 60;
     }
