@@ -39,7 +39,7 @@
     "scripts": {
         "test": "istanbul cover --report lcov  _mocha tests --recursive",
         "release": "standard-version",
-        "publish": "git push --follow-tags origin master && npm publish --access public"
+        "publishPackage": "git push --follow-tags origin master && npm publish --access public"
     },
     "contributors": [
         "Brandon Canaday <bc443e@att.com>",
