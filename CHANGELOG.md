@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/bc443e/mongoose-diff-history/compare/v2.3.1...v2.4.0) (2020-12-08)
+
+### Features
+
+-   add advancedTextDiffMinLength plugin opt (overrides default of 60) ([7f067fb](https://github.com/bc443e/mongoose-diff-history/commit/7f067fb652454ba537879d908857fd83d6919342))
+
 ### [2.3.1](https://github.com/bc443e/mongoose-diff-history/compare/v2.3.0...v2.3.1) (2020-11-30)
 
 ### Bug Fixes
