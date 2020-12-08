@@ -7,7 +7,7 @@ const { assign } = require('power-assign');
 
 // try to find an id property, otherwise just use the index in the array
 const objectHash = (obj, idx) => obj._id || obj.id || `$$index: ${idx}`;
-const diffPatcher = require('jsondiffpatch').create({ objectHash });
+const jsondiffpatch = require('jsondiffpatch');
 
 const History = require('./diffHistoryModel').model;
 
@@ -36,6 +36,11 @@ function saveDiffObject(currentObject, original, updated, opts, queryObject) {
     const { __user: user, __reason: reason, __session: session } =
         (queryObject && queryObject.options) || currentObject;
 
+    const diffPatcher = jsondiffpatch.create({
+        objectHash,
+        textDiff: { minLength: opts.advancedTextDiffMinLength }
+    });
+
     let diff = diffPatcher.diff(
         JSON.parse(JSON.stringify(original)),
         JSON.parse(JSON.stringify(updated))
@@ -43,10 +48,6 @@ function saveDiffObject(currentObject, original, updated, opts, queryObject) {
 
     if (opts.omit) {
         omit(diff, opts.omit, { cleanEmpty: true });
-    }
-
-    if (opts.pick) {
-        diff = pick(diff, opts.pick);
     }
 
     if (!diff || !Object.keys(diff).length || empty.all(diff)) {
@@ -131,6 +132,8 @@ const saveDiffs = (queryObject, opts) =>
         .eachAsync(result => saveDiffHistory(queryObject, result, opts));
 
 const getVersion = (model, id, version, queryOpts, cb) => {
+    const diffPatcher = jsondiffpatch.create({ objectHash });
+
     if (typeof queryOpts === 'function') {
         cb = queryOpts;
         queryOpts = undefined;
@@ -240,6 +243,7 @@ const getHistories = (modelName, id, expandableFields, cb) => {
  * @param {Object} [opts] - Options passed by Mongoose Schema.plugin
  * @param {string} [opts.uri] - URI for MongoDB (necessary, for instance, when not using mongoose.connect).
  * @param {string|string[]} [opts.omit] - fields to omit from diffs (ex. ['a', 'b.c.d']).
+ * @param {number} [opts.advancedTextDiffMinLength] - min length of text before google text diff library is used instead
  */
 const plugin = function lastModifiedPlugin(schema, opts = {}) {
     if (opts.uri) {
@@ -259,9 +263,22 @@ const plugin = function lastModifiedPlugin(schema, opts = {}) {
         if (typeof opts.omit === 'string') {
             opts.omit = [opts.omit];
         } else {
-            const errMsg = `opts.omit expects string or array, instead got '${typeof opts.omit}'`;
+            const errMsg = `opts.omit expects a string or array`;
             throw new TypeError(errMsg);
         }
+    }
+
+    if (opts.advancedTextDiffMinLength) {
+        const positiveInt = positiveInt(opts.advancedTextDiffMinLength);
+
+        if (!positiveInt) {
+            const errMsg = `opts.advancedTextDiffMinLength expects a positive integer`;
+            throw new TypeError(errMsg);
+        }
+
+        opts.advancedTextDiffMinLength = positiveInt;
+    } else {
+        opts.advancedTextDiffMinLength = 60;
     }
 
     schema.pre('save', function (next) {
@@ -310,6 +327,16 @@ const plugin = function lastModifiedPlugin(schema, opts = {}) {
             .catch(next);
     });
 };
+
+function positiveInt(value) {
+    const parsedInt = parsedInt(value, 10);
+
+    if (isNaN(parsedInt) || parsedInt <= 0) {
+        return false;
+    }
+
+    return parsedInt;
+}
 
 module.exports = {
     plugin,
