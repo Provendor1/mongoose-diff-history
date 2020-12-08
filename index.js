@@ -10,6 +10,7 @@ const objectHash = (obj, idx) => obj._id || obj.id || `$$index: ${idx}`;
 const jsondiffpatch = require('jsondiffpatch');
 
 const History = require('./diffHistoryModel').model;
+const { positiveInt } = require('./helpers');
 
 const isValidCb = cb => {
     return cb && typeof cb === 'function';
@@ -327,16 +328,6 @@ const plugin = function lastModifiedPlugin(schema, opts = {}) {
             .catch(next);
     });
 };
-
-function positiveInt(value) {
-    const parsedInt = parsedInt(value, 10);
-
-    if (isNaN(parsedInt) || parsedInt <= 0) {
-        return false;
-    }
-
-    return parsedInt;
-}
 
 module.exports = {
     plugin,
