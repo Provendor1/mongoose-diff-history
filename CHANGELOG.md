@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.4](https://github.com/bc443e/mongoose-diff-history/compare/v2.4.3...v2.4.4) (2021-03-25)
+
+### Bug Fixes
+
+-   add quick fix to make this work with soft-delete mongoose plugin ([b7f6d24](https://github.com/bc443e/mongoose-diff-history/commit/b7f6d2432407e70595afe7ef804c437bf2eed433))
+
 ### [2.4.3](https://github.com/bc443e/mongoose-diff-history/compare/v2.4.2...v2.4.3) (2020-12-08)
 
 ### Bug Fixes
