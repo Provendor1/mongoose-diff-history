@@ -290,6 +290,12 @@ const plugin = function lastModifiedPlugin(schema, opts = {}) {
                 if (checkRequired(opts, {}, this)) {
                     return;
                 }
+
+                // a quick fix for making this package work with a mongoose soft-delete plugin.
+                // note: as a result of this line, any changes to the properties modified by the soft-delete
+                // plugin (or those modified at the same time as these soft-delete plugin props) will not be tracked in the diff history
+                if (!original) return;
+
                 return saveDiffObject(
                     this,
                     original.toObject({ depopulate: true }),
